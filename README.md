@@ -17,3 +17,5 @@ Example:
 	>>> do_something_with(msgs)
 
 This will run until the imap connection receives an idle notification from the imap server, then will return a list of email.message.Message objects (or whatever the return value for the factory keyword argument is) for each new email found in the mailbox. The messages will have been moved to a folder ('Processed' by default, changeable via the processed_mailbox keyword argument) on the server and removed from the mailbox.
+
+<a href="ezrabc.github.io/pailhawk-pages">read the docs</a>
