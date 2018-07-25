@@ -1,6 +1,8 @@
 # pailhawk
 A python package for easily monitoring an imap server
 
+Built on top of Piers Lauder's imaplib2 3.05 beta for python3 found <a href="https://github.com/imaplib2/imaplib2/tree/master/imaplib2">here</a> and repackaged in the resources module.
+
 Example:
 
 	>>> import pailhawk as ph
