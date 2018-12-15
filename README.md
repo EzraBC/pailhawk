@@ -3,7 +3,13 @@ A python package for easily monitoring an imap server
 
 Built on top of Piers Lauder's imaplib2 3.05 beta for python3 found <a href="https://github.com/imaplib2/imaplib2/tree/master/imaplib2">here</a> and repackaged in the resources module.
 
-Example:
+Examples:
+
+	>>> import pailhawk
+	>>> cfg_file = 'path/to/my/config.ini'
+	>>> msgs = pailhawk.watch(cfg_file)
+
+This will block until the imap connection receives an idle notification from the imap server, then will return a list of email.message.Message objects (or whatever the return value for the factory keyword argument is) for each new email found in the mailbox. The messages will have been moved to a folder ('Processed' by default, changeable via the processed_mailbox keyword argument) on the server and removed from the mailbox.
 
 	>>> import pailhawk as ph
 	>>> from pailhawk import mailparser as mp
@@ -18,6 +24,6 @@ Example:
 	...         print('Server timed out! Reconnecting...')
 	>>> do_something_with(msgs)
 
-This will run until the imap connection receives an idle notification from the imap server, then will return a list of email.message.Message objects (or whatever the return value for the factory keyword argument is) for each new email found in the mailbox. The messages will have been moved to a folder ('Processed' by default, changeable via the processed_mailbox keyword argument) on the server and removed from the mailbox.
+Here is a more long-running example that will continue to re-connect until a message is received.
 
 <a href="https://ezrabc.github.io/pailhawk-pages">read the docs</a>
